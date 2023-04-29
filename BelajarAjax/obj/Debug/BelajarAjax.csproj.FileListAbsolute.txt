@@ -1,0 +1,5 @@
+C:\Users\USER\Documents\Visual Studio 2008\Projects\BelajarAjax\BelajarAjax\bin\BelajarAjax.dll
+C:\Users\USER\Documents\Visual Studio 2008\Projects\BelajarAjax\BelajarAjax\bin\BelajarAjax.pdb
+C:\Users\USER\Documents\Visual Studio 2008\Projects\BelajarAjax\BelajarAjax\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2008\Projects\BelajarAjax\BelajarAjax\obj\Debug\BelajarAjax.dll
+C:\Users\USER\Documents\Visual Studio 2008\Projects\BelajarAjax\BelajarAjax\obj\Debug\BelajarAjax.pdb
