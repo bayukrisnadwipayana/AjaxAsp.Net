@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Untitled Page</title>
-   
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,10 +20,11 @@
     <asp:TextBox ID="namaprovinsi" runat="server"></asp:TextBox>
     <br />
     <input type="button" id="btnsave" value="Save" onclick="SaveProvinsi()" />
+    <input type="button" id="fetchdata" value="Display" onclick="Display()" />
     </div>
     </form>
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script type="text/javascript">
+     
+     <script type="text/javascript">
             function SaveProvinsi()
             {
                 var param={id:$('#<%= idprovinsi.ClientID %>').val(),
@@ -37,9 +39,30 @@
                     success:function(data){},
                     error:function(){}
                 });
-                alert('Data Sukses Disimpan');
+                swal.fire(
+                  'Success',
+                  'Data Provinsi Sukses Disimpan',
+                  'success'
+                )
             }
-        </script>
+           function Display()
+           {
+            $.ajax({
+                type:'POST',
+                url:'AjaxJqueryWebMethod.aspx/DisplayNama',
+                data:'{nama: "'+$("#<%= idprovinsi.ClientID %>").val()+'"}',
+                contentType:'application/json;charset=utf-8',
+                dataType:'Json',
+                success: function sukses(data){
+                   swal.fire(
+                  'Ajax C#',
+                  data.d,
+                  'success'
+                )
+              }
+            });
+           }
+     </script>
 </body>
 </html>
 
